@@ -6,9 +6,10 @@ public class MainClass {
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 		
-		System.out.println("Press enter to flip a coin!");
+		System.out.println("Enter the number of coins to be flipped!");
 		
-		if (scnr.nextLine() != null) {
+		int numCoins = scnr.nextInt();
+		for (var i = 0; i < numCoins; i++) {	
 			System.out.println(flipCoin());
 		}
 	}
