@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class MainClass implements ActionListener {
 	static int numCoins, numHeads, numTails;
@@ -13,6 +14,7 @@ public class MainClass implements ActionListener {
 	static JButton b;
 	static JPanel imgPanel;
 	static JLabel headsLabel, tailsLabel;
+	JTextField coinFlipField;
 	
 	MainClass () {
 		ImageIcon headsImg =new ImageIcon(new ImageIcon("Heads.jpg").getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
@@ -39,11 +41,23 @@ public class MainClass implements ActionListener {
 		imgPanel.add(headsLabel);
 		imgPanel.add(tailsLabel);
 		
+		coinFlipField = new JTextField();
+		coinFlipField.setPreferredSize(new Dimension(100, 50));
+		
+		JPanel coinFlipPanel = new JPanel();
+		coinFlipPanel.add(coinFlipField);
+		
+		JPanel centerPanel = new JPanel();
+		centerPanel.setLayout(new GridLayout(2, 1));
+		
+		centerPanel.add(coinFlipPanel);
+		centerPanel.add(imgPanel, BorderLayout.CENTER);
+		
 		mainFrame = new JFrame();
 		mainFrame.setSize(500, 500);
 		mainFrame.setLayout(new BorderLayout());
 		mainFrame.add(bPanel, BorderLayout.SOUTH);
-		mainFrame.add(imgPanel, BorderLayout.CENTER);
+		mainFrame.add(centerPanel, BorderLayout.CENTER);
 		mainFrame.setVisible(true);
 	}
 	
@@ -71,16 +85,15 @@ public class MainClass implements ActionListener {
             headsLabel.setVisible(false);
         }
 	    numCoins++;
-	    
-	    imgPanel.revalidate();
-	    imgPanel.repaint();
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == b) {	
-			flipCoin();
+			for (int i = 0; i < Integer.parseInt(coinFlipField.getText()); i++) {
+				flipCoin();
+			}
 			
 			System.out.println("Number of coins: " + numCoins);
 			System.out.println("Percentage of coinflips that landed on heads: " + (((float)numHeads / numCoins) * 100) + "%");
