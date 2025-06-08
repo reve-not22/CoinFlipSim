@@ -44,7 +44,14 @@ public class MainClass implements ActionListener {
 		coinFlipField = new JTextField();
 		coinFlipField.setPreferredSize(new Dimension(100, 50));
 		
+		JLabel coinFlipLabel = new JLabel("Enter number of coin flips:");
+		coinFlipLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		coinFlipLabel.setPreferredSize(new Dimension(100, 50));
+		
 		JPanel coinFlipPanel = new JPanel();
+		coinFlipPanel.setLayout(new GridLayout(2, 1));
+		coinFlipPanel.setPreferredSize(new Dimension(200, 100));
+		coinFlipPanel.add(coinFlipLabel);
 		coinFlipPanel.add(coinFlipField);
 		
 		JPanel centerPanel = new JPanel();
@@ -93,11 +100,9 @@ public class MainClass implements ActionListener {
 				flipCoin();
 			}
 			
-			JOptionPane.showMessageDialog(null, "This is a test message");
-			
-			System.out.println("Number of coins: " + numCoins);
-			System.out.println("Percentage of coinflips that landed on heads: " + (((float)numHeads / numCoins) * 100) + "%");
-			System.out.println("Percentage of coinflips that landed on tails: " + (((float)numTails / numCoins) * 100) + "%");
+			JOptionPane.showMessageDialog(null, "Number of coins: " + numCoins + "\n" + 
+					("Percentage of coinflips that landed on tails: " + (((float)numTails / numCoins) * 100) + "%") + "\n" +
+					("Percentage of coinflips that landed on heads: " + (((float)numHeads / numCoins) * 100) + "%"));
 		}
 	}
 }
