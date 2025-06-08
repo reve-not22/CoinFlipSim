@@ -17,7 +17,7 @@ public class MainClass implements ActionListener {
 	JTextField coinFlipField;
 	
 	MainClass () {
-		ImageIcon headsImg =new ImageIcon(new ImageIcon("Heads.jpg").getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
+		ImageIcon headsImg = new ImageIcon(new ImageIcon("Heads.jpg").getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
 		ImageIcon tailsImg = new ImageIcon(new ImageIcon("Tails.png").getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
 		
 		b = new JButton("Flip");
@@ -75,12 +75,10 @@ public class MainClass implements ActionListener {
 		
 	    if (isHeads) {
 	    	numHeads++;
-            System.out.println("Heads");
             headsLabel.setVisible(true);
             tailsLabel.setVisible(false);
         } else {
             numTails++;
-            System.out.println("Tails");
             tailsLabel.setVisible(true);
             headsLabel.setVisible(false);
         }
@@ -94,6 +92,8 @@ public class MainClass implements ActionListener {
 			for (int i = 0; i < Integer.parseInt(coinFlipField.getText()); i++) {
 				flipCoin();
 			}
+			
+			JOptionPane.showMessageDialog(null, "This is a test message");
 			
 			System.out.println("Number of coins: " + numCoins);
 			System.out.println("Percentage of coinflips that landed on heads: " + (((float)numHeads / numCoins) * 100) + "%");
