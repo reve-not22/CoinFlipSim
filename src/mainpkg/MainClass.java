@@ -105,4 +105,7 @@ public class MainClass implements ActionListener {
 					("Percentage of coinflips that landed on heads: " + (((float)numHeads / numCoins) * 100) + "%"));
 		}
 	}
+	
+	//commit test 1
+	
 }
