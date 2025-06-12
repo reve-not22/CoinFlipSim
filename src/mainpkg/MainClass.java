@@ -15,6 +15,8 @@ public class MainClass implements ActionListener {
 	static JPanel imgPanel;
 	static JLabel headsLabel, tailsLabel;
 	JTextField coinFlipField;
+
+	//remote stash change
 	
 	/**
 	 * This constructor initializes the GUI components for the coin flip application.
