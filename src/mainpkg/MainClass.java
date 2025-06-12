@@ -16,10 +16,10 @@ public class MainClass implements ActionListener {
 	static JLabel headsLabel, tailsLabel;
 	JTextField coinFlipField;
 	
+	/**
+	 * This constructor initializes the GUI components for the coin flip application.
+	 */
 	MainClass () {
-		/**
-		 * This constructor initializes the GUI components for the coin flip application.
-		 */
 		ImageIcon headsImg = new ImageIcon(new ImageIcon("Heads.jpg").getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
 		ImageIcon tailsImg = new ImageIcon(new ImageIcon("Tails.png").getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
 		
@@ -79,10 +79,10 @@ public class MainClass implements ActionListener {
 		MainClass m = new MainClass();
 	}
 	
+	/**
+	 * This method simulates flipping a coin, updates the counts of heads and tails, and updates the images.
+	 */
 	static void flipCoin() {
-		/**
-		 * This method simulates flipping a coin, updates the counts of heads and tails, and updates the images.
-		 */
 		Random rand = new Random();
 		boolean isHeads = rand.nextBoolean();
 		
@@ -98,11 +98,11 @@ public class MainClass implements ActionListener {
 	    numCoins++;
 	}
 	
+	/**
+	 * handles the button click event
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		/**
-		 * handles the button click event
-		 */
 		// TODO Auto-generated method stub
 		if (e.getSource() == b) {	
 			for (int i = 0; i < Integer.parseInt(coinFlipField.getText()); i++) {
