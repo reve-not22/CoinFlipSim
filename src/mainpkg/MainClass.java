@@ -8,6 +8,10 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @Author: Damian Dematteo
+ * @Date: 6/20/2025
+ */
 public class MainClass implements ActionListener {
 	static int numCoins, numHeads, numTails;
 	static JFrame mainFrame;
