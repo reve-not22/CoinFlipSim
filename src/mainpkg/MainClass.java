@@ -20,8 +20,6 @@ public class MainClass implements ActionListener {
 	static JLabel headsLabel, tailsLabel;
 	JTextField coinFlipField;
 
-	//remote stash change
-	
 	/**
 	 * This constructor initializes the GUI components for the coin flip application.
 	 */
@@ -109,7 +107,6 @@ public class MainClass implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if (e.getSource() == b) {	
 			for (int i = 0; i < Integer.parseInt(coinFlipField.getText()); i++) {
 				flipCoin();
