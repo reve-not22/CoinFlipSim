@@ -104,8 +104,6 @@ public class MainClass implements ActionListener {
 	    numCoins++;
 	}
 	
-	//local stash test
-	
 	/**
 	 * handles the button click event
 	 */
